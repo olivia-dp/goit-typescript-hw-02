@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4d4f5c;
+    padding: 10px 0;
+    margin: 0;
+}
+
+header form {
+    display: flex;
+    align-items: center;
+    width: 700px;
+    position: relative;
+    padding: 0;
+}
+
+header input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+header input::placeholder {
+    font-size: 14px;
+}
+
+.searchBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #4d4f5c;
+    background-color: inherit;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    right: 5px;
+}
+
