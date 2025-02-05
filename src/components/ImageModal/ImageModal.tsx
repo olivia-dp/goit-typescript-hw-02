@@ -4,10 +4,18 @@ import { TbPhotoFilled } from "react-icons/tb";
 import { TbPhotoHeart } from "react-icons/tb";
 import { TbPhotoPin } from "react-icons/tb";
 import { IoLogoInstagram } from "react-icons/io5";
+import { UnsplashImage } from '../../services/interface';
 
-const ImageModal = ({ image, isOpen, onRequestClose }) => {
-    const BASE_URL ="https://www.instagram.com";
-    const FULL_URL = `${BASE_URL}/${image.user.social.instagram_username}`;
+type ImageModalProps = {
+  image: UnsplashImage,
+  isOpen: boolean,
+  onRequestClose: () => void
+}
+
+
+const ImageModal = ({ image, isOpen, onRequestClose }: ImageModalProps) => {
+    const BASE_URL: string ="https://www.instagram.com";
+    const FULL_URL: string = `${BASE_URL}/${image.user.social.instagram_username}`;
     return (
       <Modal
         isOpen={isOpen}

@@ -1,7 +1,8 @@
-import SearchBar from './components/SearchBar/SearchBar'
 import { useState } from 'react';
 import { fetchImages } from './services/api';
+import { UnsplashImage } from './services/interface';
 import Loader from './components/Loader/Loader';
+import SearchBar from './components/SearchBar/SearchBar'
 import toast from 'react-hot-toast';
 import ImageGallery from './components/ImageGallery/ImageGallery';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
@@ -12,15 +13,16 @@ import ImageModal from "./components//ImageModal/ImageModal";
 
 
 function App() {
-  const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const [selectedImage, setSelectedImage] = useState (null);
+  const [images, setImages] = useState<UnsplashImage[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [query, setQuery] = useState<string>("");
+  const [selectedImage, setSelectedImage] = useState<any> (null);
+  
   
 
-  const getImagesData = async (newQuery, newPage = 1) => {
+  const getImagesData = async (newQuery: string, newPage = 1) => {
     try {
       setIsLoading(true);
       setIsError(false);
@@ -35,7 +37,7 @@ function App() {
     }
   };
 
-  const handleChangeQuery = (newQuery) => {
+  const handleChangeQuery = (newQuery: string) => {
     if (newQuery === query) {
       toast.error("Please enter a new search query!");
       return;
@@ -57,7 +59,7 @@ function App() {
 
 
 
-const handleCardClick = (image) => {
+const handleCardClick = (image: UnsplashImage) => {
     setSelectedImage(image);
   }
 

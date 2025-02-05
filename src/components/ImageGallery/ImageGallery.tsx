@@ -1,9 +1,14 @@
+
+import { UnsplashImage } from "../../services/interface";
 import ImageCard from "../ImageCard/ImageCard";
 import s from "./ImageGallery.module.css"
 
+type ImageGalleryProps = {
+  images: UnsplashImage[],
+  handleCardClick: (image: UnsplashImage) => void
+}
 
-
-const ImageGallery = ({ images, handleCardClick }) => {
+const ImageGallery = ({ images, handleCardClick }: ImageGalleryProps) => {
   
   return (
     <ul className={s.list}>
