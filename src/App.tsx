@@ -18,7 +18,7 @@ function App() {
   const [isError, setIsError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>("");
-  const [selectedImage, setSelectedImage] = useState<any> (null);
+  const [selectedImage, setSelectedImage] = useState<UnsplashImage | null> (null);
   
   
 

@@ -9,7 +9,7 @@ type SearchBarProps = {
  }
 
 const SearchBar = ({ onSubmit }: SearchBarProps) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState<string>("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
